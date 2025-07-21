@@ -142,7 +142,7 @@ function testes() {
                     <div class="cupom-conteudo">
                     <h3> Presente confirmado! 🎁</h3>
                     <p>Produto Escolhido: ${ultimoProdutoSelecionado.nome} </p>
-                    <p><strong>Mensagem:</strong> ${ultimoProdutoSelecionado.mensagem}<i>a</i></p>
+                    <p><strong>Mensagem entregue!</strong><i>a</i></p>
                 </div>
                 `;
                 
