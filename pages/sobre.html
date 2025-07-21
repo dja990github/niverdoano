@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Álbum de Fotos</title>
+    <link rel="icon" href="../img/cupcake.jpg">
+    <link rel="stylesheet" href="../css/menu.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('../img/fundoFotos.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000; /* Fallback */
+    overflow-x: hidden;
+    font-family: sans-serif;
+}
+
+.conteiner {
+    padding: 0.4em 5%;
+}
+
+.line {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    border: none;
+}
+
+
+    
+.line img {
+    width: auto;
+    height: 70vh; /* para celular */
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 3px 0 5% 0;
+    box-shadow: 0 10px 15px 18px rgba(0, 0, 0, 0.5);
+    transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 780px) {
+    .line img {
+        width: 90vw;
+        height: auto; /* para PC */
+        object-fit: contain; /* melhor para mostrar a imagem inteira */
+        margin: 5px 10px;
+    }
+}
+
+.line img:hover {
+    transform: scale(1.10);
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Botão do menu -->
+    <img onclick="menu(nPOP++)" id="menubtn" src="../img/menu-btn.png" alt="Menu">
+
+    <!-- Menu lateral -->
+    <nav class="menuhover">
+        <img onclick="window.location.href='../index.html'" id="logo" src="../img/logoF1.png" alt="Logo">
+        <div class="btns" id="times"></div>
+        <div class="btns" id="bandeira">Bandeira verde</div>
+        <div class="btns"><b class="bNumero">1</b><b class="bEmoji">📝</b><button><a href="./sobre.html">Sobre</a></button></div>
+        <div class="btns"><b class="bNumero">2</b><b class="bEmoji">📅</b><button><a href="./programacao.html">Programação</a></button></div>
+        <div class="btns"><b class="bNumero">3</b><b class="bEmoji">✔️</b><button><a href="./press.html">Confirme sua presença!</a></button></div>
+        <div class="btns"><b class="bNumero">4</b><b class="bEmoji">🎁</b><button><a href="./presentes/presentes.html">Presentes</a></button></div>
+    </nav>
+
+    <!-- Álbum de Fotos -->
+    <div class="conteiner">
+        <div class="line"></div>
+    </div>
+<script>
+    const galeria = document.querySelector(".line");
+
+for (let n = 0; n < 75; n++) {
+    let img = document.createElement("img");
+    img.src = `./album/${n}.jpeg`;
+    img.onerror = () => img.remove(); // remove imagem se não carregar
+    galeria.appendChild(img); // <-- CORRETO
+}
+</script>
+
+    <script>
+        let nPOP = 2;
+        const popupmenu = document.querySelector(".menuhover");
+        const btnpopup = document.getElementById("menubtn");
+
+        function menu(nPOP) {
+            if (nPOP % 2 === 0) {
+                popupmenu.style.transform = "translateX(0)";
+                btnpopup.style.marginLeft = popupmenu.scrollWidth + "px";
+            } else {
+                popupmenu.style.transform = "translateX(-50vw)";
+                btnpopup.style.marginLeft = "1vw";
+            }
+        }
+    </script>
+
+</body>
+</html>

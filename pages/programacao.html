@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Programação</title>
+  <link rel="icon" href="../img/cupcake.jpg">
+  <link rel="stylesheet" href="../css/menu.css">
+  <style>
+    *{
+        box-sizing: border-box;
+    }
+    body {
+        background-color: rgb(246, 228, 195);
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .body{
+        padding: 2rem;
+        max-width: 800px;
+        margin: auto;
+        border: none;
+    }
+    h1, h2 {
+        color: black;
+    }
+    .linha {
+        border-bottom: 1px solid orange;
+        margin: 1rem 0;
+    }
+    .info {
+        margin-top: 2rem;
+    }
+    .tag {
+        color: orange;
+    }
+    .terminal {
+        background-color: #1a1a1a;
+        padding: 1rem;
+        border-radius: 5px;
+        box-shadow: 0 0 10px orange;
+         color: #ffffff;
+        margin-top: 2rem;
+    }
+    .footer {
+        text-align: center;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+        color: #000000;
+    }
+    
+  </style>
+</head>
+<body>
+    <img onclick="menu(nPOP++)" id="menubtn" src="../img/menu-btn.png">
+    <nav class="menuhover">
+        <img onclick="window.location.href='../index.html'" id="logo" src="../img/logoF1.png">
+        <div class="btns" id="times"></div>
+        <div class="btns" id="bandeira">Bandeira verde</div>
+        <div class="btns"><b class="bNumero">1</b><b class="bEmoji">📝</b><button><a href="./sobre.html">Sobre</a></button></div>
+        <div class="btns"><b class="bNumero">2</b><b class="bEmoji">📅</b><button><a href="./programacao.html">Programação</a></button></div>
+        <div class="btns"><b class="bNumero">3</b><b class="bEmoji">✔️</b><button><a href="./press.html">Confirme sua presença!</a></button></div>
+        <div class="btns"><b class="bNumero">4</b><b class="bEmoji">🎁</b><button><a href="./presentes/presentes.html">Presentes</a></button></div>
+    </nav>
+<div class="body">
+  <h1>Programação da festa!</h1>
+  <div class="linha"></div>
+
+  <div class="terminal">
+    <p><span class="tag">&gt;&gt;</span> Hello world!</p>
+    <p><span class="tag">&gt;&gt;</span> Este ano estou completando mais um ciclo!</p>
+  </div>
+
+  <div class="info">
+    <h2>📅 Informações importantes:</h2>
+    <ul>
+      <li><strong>Data:</strong> 16 de Agosto de 2025 (sábado)</li>
+      <li><strong>Horário:</strong> A partir das: (horário que der para vir)</li>
+      <li><strong>Local:</strong> Rua Palmital nº 21 - Guarulhos - Gopouva - CEP 07050-150 </li>
+
+    </ul>
+  </div>
+
+  <div class="terminal">
+    <p><span class="tag">&gt;&gt;</span> Venha com o coração aberto e o estômago pronto para o churrasco!</p>
+    <p><span class="tag">&gt;&gt;</span> Com carinho,</p>
+    <p><span class="tag">&gt;&gt;</span> Daniel Jordão de Araujo</p>
+  </div>
+
+
+  <div class="footer">
+    &lt;/convite&gt; — feito com ❤️ e muitos <code>console.log("abraços!")</code>
+  </div>
+</div>
+    <script>
+        let nPOP = 2;
+        const popupmenu = document.getElementsByClassName("menuhover")[0];
+        const btnpopup = document.getElementById("menubtn");
+
+        function menu(nPOP) {
+            if (nPOP % 2 === 0) {
+                popupmenu.style.transform = "translateX(0)";
+                btnpopup.style.margin = `1vw 0 0 ${popupmenu.scrollWidth + "px"}`;
+            } else {
+                popupmenu.style.transform = "translateX(-50vw)";
+                btnpopup.style.margin = "1vw 0 0 1vw";
+            }
+        }
+    </script>
+<script src="./js/func.js"></script>
+</body>
+</html>

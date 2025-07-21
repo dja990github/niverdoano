@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escolha um Presente</title>
+      <link rel="icon" href="../../img/cupcake.jpg">
+    <link rel="stylesheet" href="../../css/menu.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff8e1;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        p {
+            padding: 4vh;
+            text-align: center;
+            font-size: 1.5rem;
+            color: #ff6f61;
+        }
+
+        .conteiner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            padding: 2rem;
+            justify-items: center;
+            box-sizing: border-box;
+        }
+
+
+        .opcoes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #ffe0b2;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px 4px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            max-width: 300px;
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.3s ease;
+        }       
+
+        .opcoes img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 1px 2px 3px 2px rgb(62, 62, 62);
+            margin: 0.5rem 0;
+        }
+
+        .opcoes p {
+            margin:0;
+            font-weight: bold;
+            color: #ff6f61;
+            font-size: 1rem;
+        }
+        @media screen and (max-width: 780px) {
+
+            .opcoes img {
+                width: 60%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 1px 2px 3px 2px rgb(62, 62, 62);
+                margin: 0.5rem 0;
+            }
+
+            .opcoes p {
+                padding: 0;
+                margin: 0;
+                width: 100%;           /* Defina uma largura fixa */
+                white-space: nowrap;    /* Impede quebra de linha */
+                overflow: hidden;       /* Oculta o texto que exceder a largura */
+                text-overflow: ellipsis; 
+            }
+            .conteiner {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(146px, 3fr));
+                gap: 1rem;
+                padding: 1rem;
+                justify-items: center;
+                box-sizing: border-box;
+            }
+            .opcoes.open{
+                position: fixed;
+                top: 50%;
+                margin: 20% 50% 0 0;
+                margin: 0;
+        }
+
+        }
+
+        .opcoes.open{
+            position: fixed;
+            top: 1%;
+            left: 30%;
+            transition: scale 1s ease;
+            scale: 95%;
+            z-index: 1;
+        }
+
+        .confirma {
+            font-size: 1em;
+            padding: 10px 20px;
+            border: none;
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+
+
+        .confirma:hover {
+            background-color: #e64a19;
+            transform: scale(1.1);
+            transition: 0.3s ease;
+        }
+
+        .opcoes.indisponivel {
+             filter: grayscale(100%);
+            pointer-events: none;
+            opacity: 0.6;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0; left: 0;
+
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+.opcoes .fechar {
+    visibility: hidden;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    border: none;
+    padding: 4px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+
+.modal.ativo {
+    display: flex;
+}
+.modal h2{
+    margin-bottom: 20px;
+}
+
+.modal-content {
+    background: wheat;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 0 10px #00000066;
+    text-align: center;
+}
+
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 1rem 0;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
+
+.botoes-modal {
+    display: flex;
+    justify-content: space-around;
+}
+
+.botoes-modal button{
+    padding: 10px 20px;
+    margin: 10px 10px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botoes-modal button:hover {
+    transform: scale(110%);
+    background-color: #e64a19;
+}
+aside{
+    display: flex;
+    justify-content: center;
+}
+
+.fecharCupon{
+    position:absolute;
+    background-color: red;
+    padding: 5px 10px;
+    top: 5%;
+    left: 5%;
+    color: white;
+    border-radius: 35px;
+}
+#cupom {
+    position: fixed;
+    top: 100%;
+    left: 30%;
+
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff8dc;
+    border: 2px dashed #daa520;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    padding: 1rem;
+    z-index: 1;
+    transition: all 0.7s ease;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    transition-duration: 1s;
+}
+@media screen and (max-width:780px) {
+    #cupom {
+    position: fixed;
+    top: 100%;
+    left: 5%;
+
+    width: 90%;
+    max-width: 400px;
+    background-color: #fff8dc;
+    border: 2px dashed #daa520;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    padding: 1rem;
+    z-index: 1;
+    transition: all 0.7s ease;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    transition-duration: 1s;
+    }
+
+}
+
+/* confirmar os presentes */
+    </style>
+</head>
+<body>
+    <aside id="cupom" class=""></aside>
+
+    <img onclick="menu(nPOP++)" id="menubtn" src="../../img/menu-btn.png">
+    <nav class="menuhover">
+        <img onclick="window.location.href='../../index.html'" id="logo" src="../../img/logoF1.png">
+        <div class="btns" id="times"></div>
+        <div class="btns" id="bandeira">Bandeira verde</div>
+        <div class="btns"><b class="bNumero">1</b><b class="bEmoji">📝</b><button><a href="../sobre.html">Sobre</a></button></div>
+        <div class="btns"><b class="bNumero">2</b><b class="bEmoji">📅</b><button><a href="../programacao.html">Programação</a></button></div>
+        <div class="btns"><b class="bNumero">3</b><b class="bEmoji">✔️</b><button><a href="../press.html">Confirme sua presença!</a></button></div>
+        <div class="btns"><b class="bNumero">4</b><b class="bEmoji">🎁</b><button><a href="./presentes.html">Presentes</a></button></div>
+    </nav>
+
+    <p>🎁 Presentes 🎁</p>
+
+
+    <aside class="conteiner"></aside>
+
+    <script>
+        let nPOP = 2;
+        const popupmenu = document.getElementsByClassName("menuhover")[0];
+        const btnpopup = document.getElementById("menubtn");
+
+        function menu(nPOP) {
+            if (nPOP % 2 === 0) {
+                popupmenu.style.transform = "translateX(0)";
+                btnpopup.style.margin = `1vw 0 0 ${popupmenu.scrollWidth + "px"}`;
+            } else {
+                popupmenu.style.transform = "translateX(-50vw)";
+                btnpopup.style.margin = "1vw 0 0 1vw";
+            }
+        }
+
+        
+    </script>
+
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2>Obrigado pela sua escolha!</h2>
+   
+    <h3>Para evitar transtornos com trocas ou 
+        devoluções envie o valor do item para
+        a chave pix
+        <br>
+        danielcrajo@gmail.com
+    </h3>
+
+    <textarea id="comprador-mensagem" placeholder=" Deixe seu nome e uma mensagem!" rows="4" style="width: 100%; margin-top: 1rem;"></textarea>
+    
+    <div class="botoes-modal">
+      <button id="btn-confirmar" onclick="testes()">Finalizar</button>
+      <button id="btn-cancelar">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../js/lista.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init("OYO8Ai_ciQwpxjFUH"); 
+</script>
+
+<script src="../../js/app.js"></script>
+</body>
+</html>

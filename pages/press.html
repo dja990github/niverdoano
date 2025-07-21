@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Confirmação</title>
+  <link rel="icon" href="../img/cupcake.jpg">
+  <link rel="stylesheet" href="../css/menu.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background-color: wheat;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 20px 0 0 0;
+      font-size: 2.5rem;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      color: #DAA520;
+      margin-bottom: 1rem;
+    }
+    #foto{
+      position: absolute;
+      width: 20%;
+      top: 70%;
+      right: 30%;
+      border: 1px solid rgb(0, 0, 0);
+      box-shadow: 4px 6px 8px black;
+    }
+    @media screen and (max-width:780px){
+      #foto{
+        width: 30%;
+        top: 80%;
+        right: 10%;
+       /* border: 0.1px solid black;     */
+        box-shadow: 2px 3px 5px black;
+    }
+    }
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      padding: 2rem 1rem;
+    }
+    .botao-confirmar {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #DAA520;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .botao-confirmar:hover {
+      background-color: #c19c00;
+    }
+    li{
+      margin-block: 10px;
+    }
+  </style>
+</head>
+<body>
+    <img onclick="menu(nPOP++)" id="menubtn" src="../img/menu-btn.png">
+    <nav class="menuhover">
+        <img onclick="window.location.href='../index.html'" id="logo" src="../img/logoF1.png">
+        <div class="btns" id="times"></div>
+        <div class="btns" id="bandeira">Bandeira verde</div>
+        <div class="btns"><b class="bNumero">1</b><b class="bEmoji">📝</b><button><a href="./sobre.html">Sobre</a></button></div>
+        <div class="btns"><b class="bNumero">2</b><b class="bEmoji">📅</b><button><a href="./programacao.html">Programação</a></button></div>
+        <div class="btns"><b class="bNumero">3</b><b class="bEmoji">✔️</b><button><a href="./press.html">Confirme sua presença!</a></button></div>
+        <div class="btns"><b class="bNumero">4</b><b class="bEmoji">🎁</b><button><a href="./presentes/presentes.html">Presentes</a></button></div>
+    </nav>
+<header>
+  <h1> Venha comemorar comigo! </h1>
+</header>
+
+<main>
+<section>
+  <h2>Oi, pessoal!</h2>
+  <p>
+    Parece mentira mas já estou completando 18 anos,
+    e eu não podia deixar de convidar as pessoas mais importantes da minha vida!
+ 
+    Vai ser uma comemoração simples, mas feita com muito carinho. Espero te ver aqui, comemorando e se divertindo! 
+  </p>
+  <br>
+  <p>
+    Todos os detalhes estão na aba <strong>"Programação"</strong> aqui no site.
+  </p>
+</section>
+  <section id="confirmar">
+    <ul>    
+      <p>Me dá um alô! </p><img id="foto" src="./img/hm.jpeg">
+      <li>📱 WhatsApp</li>
+      <!-- Ou adicione aqui um link para Google Forms ou outro -->
+    </ul>
+    <a href="https://wa.me/5511994250588?text=Pode%20guardar%20um%20lugar%20pra%20mim!!" target="_blank" class="botao-confirmar">Confirmar Presença</a>
+  </section>
+</main>
+
+<footer>
+  Feito com carinho por mim ✨  
+</footer>
+    <script>
+        let nPOP = 2;
+        const popupmenu = document.getElementsByClassName("menuhover")[0];
+        const btnpopup = document.getElementById("menubtn");
+
+        function menu(nPOP) {
+            if (nPOP % 2 === 0) {
+                popupmenu.style.transform = "translateX(0)";
+                btnpopup.style.margin = `1vw 0 0 ${popupmenu.scrollWidth + "px"}`;
+            } else {
+                popupmenu.style.transform = "translateX(-50vw)";
+                btnpopup.style.margin = "1vw 0 0 1vw";
+            }
+        }
+    </script>
+<script src="./js/func.js"></script>
+</body>
+</html>

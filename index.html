@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite</title>
+    <link rel="icon" href="./img/cupcake.jpg">
+    <link rel="stylesheet" href="./css/menu.css">
+    <link rel="stylesheet" href="./css/indexp.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            overflow: hidden;
+            background-color: rgb(240, 231, 215);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            position: relative;
+        }
+
+        #menubtn {
+            position: fixed;
+            z-index: 1;
+            width: 70px;
+            left: 0;
+            height: 70px;
+            margin: 1vw 0 0 1vw;
+            transition: margin 1s ease;
+            cursor: pointer;
+        }
+
+        /* Conteúdo central */
+        #imgBandeira {
+            padding-top: 5px;
+            margin-top: 10px;
+            width: 200px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+
+        #imgPrincipal {
+            width: 800px;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 5px 7px 8px rgba(0, 0, 0, 0.70);
+        }
+
+        /* Selos laterais */
+        .selos {
+            position: absolute;
+            width: 150px;
+            height: auto;
+            border: 1px solid black;
+            box-shadow: 3px 5px 10px black;
+        }
+
+        #selos1, #selos2, #selos3 {
+            left: 75px;
+        }
+
+        #selos4, #selos5, #selos6 {
+            right: 75px;
+        }
+
+        #selos1 { top: 15%; transform: rotate(-20deg);}
+        #selos2 { top: 40%; }
+        #selos3 { top: 75%; }
+
+        #selos4 { top: 15%; transform: rotate(20deg);}
+        #selos5 { top: 40%; }
+        #selos6 { top: 75%; }
+
+        /* Responsivo (opcional) */
+        @media (max-width: 768px) {
+            .selos {
+                display: none;
+            }
+
+            #imgBandeira {
+                width: 300px;
+                margin-block: 15px 0;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-block: 10px 30px;
+            }
+
+            h2 {
+                font-size: 1.2em;
+                margin-bottom: 40px;
+            }
+
+            #imgPrincipal{
+                width: 300px;
+                max-width: 400px;
+            }
+
+            .menuhover{
+                width: 350pxs;
+            }
+
+            #selos1 {left: 30px; top: 20px; }   
+            
+        }
+    </style>
+</head>
+<body>
+
+    <img onclick="menu(nPOP++)" id="menubtn" src="./img/menu-btn.png">
+
+    <nav class="menuhover">
+        <img id="logo" src="./img/logoF1.png">
+        <div class="btns" id="times"></div>
+        <div class="btns" id="bandeira">Bandeira verde</div>
+        <div class="btns"><b class="bNumero">1</b><b class="bEmoji">📝</b><button><a href="./pages/sobre.html">Sobre</a></button></div>
+        <div class="btns"><b class="bNumero">2</b><b class="bEmoji">📅</b><button><a href="./pages/programacao.html">Programação</a></button></div>
+        <div class="btns"><b class="bNumero">4</b><b class="bEmoji">✔️</b><button><a href="./pages/press.html">Confirme sua presença!</a></button></div>
+        <div class="btns"><b class="bNumero">3</b><b class="bEmoji">🎁</b><button><a href="./pages/presentes/presentes.html">Troféus</a></button></div>
+    </nav>
+
+    <!-- Conteúdo central -->
+    <img id="imgBandeira" src="./img/bandeira.png" alt="Bandeira">
+    <h1>DANIEL</h1>
+    <h2> 🥳 18 anos  🥳</h2>
+    <img id="imgPrincipal" src="./img/inicio.jpeg" alt="Imagem principal">
+
+    <!-- Selos Esquerda -->
+    <img class="selos" id="selos1" src="./img/f1.gif">
+    <img class="selos" id="selos2" src="./img/f1(2).gif">
+    <img class="selos" id="selos3" src="./img/f1(3).gif">
+
+    <!-- Selos Direita -->
+    <img class="selos" id="selos4" src="./img/f1.gif">
+    <img class="selos" id="selos5" src="./img/f1(2).gif">
+    <img class="selos" id="selos6" src="./img/f1(3).gif">
+
+    <script>
+        let nPOP = 2;
+        const popupmenu = document.getElementsByClassName("menuhover")[0];
+        const btnpopup = document.getElementById("menubtn");
+
+        function menu(nPOP) {
+            if (nPOP % 2 === 0) {
+                popupmenu.style.transform = "translateX(0)";
+                btnpopup.style.margin = `1vw 0 0 ${popupmenu.scrollWidth + "px"}`;
+            } else {
+                popupmenu.style.transform = "translateX(-50vw)";
+                btnpopup.style.margin = "1vw 0 0 1vw";
+            }
+        }
+    </script>
+</body>
+</html>
