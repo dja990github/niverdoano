@@ -115,7 +115,7 @@
             "preco":"51,90",
             "disponivel":       
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -531,6 +531,7 @@
     ];
 
     
+
 
 
 
