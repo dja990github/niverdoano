@@ -137,7 +137,7 @@
             "imagem": "../img/relogio.png",
             "link": "https://shopee.com.br/product/1412388812/26719595459",
             "preco":"70,99",
-            "disponivel":  
+            "0":  
             /* trocar por 0 */
                 0
             /* trocar por 0r */ 
@@ -531,5 +531,6 @@
     ];
 
     
+
 
 
