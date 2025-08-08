@@ -113,7 +113,7 @@
             "imagem":"../img/alarme.png",
             "link":"https://www.magazineluiza.com.br/relogio-de-mesa-digital-cabeceira-luminoso-pequeno-com-usb-hxt/p/cfchj5e6gg/md/tmfm/",
             "preco":"51,90",
-            "0":       
+            "disponivel":       
             /* trocar por 0 */
                 "(--disponivel--)"
             /* trocar por 0r */ 
@@ -531,6 +531,7 @@
     ];
 
     
+
 
 
 
