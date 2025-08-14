@@ -31,7 +31,7 @@
             "preco":"40,90",
             "disponivel":  
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -79,7 +79,7 @@
             "preco":"88,30",
             "disponivel":             
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             , 
         },
@@ -343,7 +343,7 @@
             "preco":"19,90",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -531,6 +531,7 @@
     ];
 
     
+
 
 
 
