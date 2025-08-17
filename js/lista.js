@@ -331,7 +331,7 @@
             "preco":"69,99",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                    0
             /* trocar por 0r */ 
             ,
         },
@@ -379,7 +379,7 @@
             "preco":"23,59",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                       0
             /* trocar por 0r */ 
             ,
         },
@@ -391,7 +391,7 @@
             "preco":"23,59",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                    0
             /* trocar por 0r */ 
             ,
         },
@@ -427,7 +427,7 @@
             "imagem":"../img/bola.png",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -451,7 +451,7 @@
             "preco":"15,90",
             "disponivel":
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -499,7 +499,7 @@
             "preco":"50,00",
             "disponivel": 
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -511,7 +511,7 @@
             "preco":"61,85",
             "disponivel": 
             /* trocar por 0 */
-                "(--disponivel--)"
+                0
             /* trocar por 0r */ 
             ,
         },
@@ -531,6 +531,7 @@
     ];
 
     
+
 
 
 
